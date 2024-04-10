@@ -42,7 +42,7 @@ export async function sendEthProcess(client){
         console.log(`send at ${hash} ${faucet}`)
         if(status){
             const channel = client.channels.cache.get(channelId);
-            channel.send(`<@${faucet.userId}> ${sendAmout} ETH sent to your wallet: ${process.env.TESTNET_RPC}{/tx/${hash}`, { reply: channelId });
+            channel.send(`<@${faucet.userId}> ${sendAmout} ETH sent to your wallet: ${process.env.TESTNET_EXPLORER}/tx/${hash}`, { reply: channelId });
             faucet.status = "completed"
         }else{
             faucet.status = "initial"
